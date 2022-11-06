@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input {
+  border-style: none;
+  border: 1px solid hsl(279deg, 6%, 55%);
+}
+input:focus {
+  border: 1px solid hsl(278deg, 68%, 11%);
+  outline: none;
+}
+input.inputName, input.inputCardNumber {
+  width: 100%;
+  padding: 5px 10px 5px 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+input.inputXXYY {
+  width: 50px;
+  padding: 5px;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-align: center;
+}
+input.inputCVC {
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+}/*# sourceMappingURL=input.css.map */

@@ -1,0 +1,13 @@
+.submitButton {
+  position: relative;
+  width: 100%;
+  padding: 7px 60px;
+  font-size: 1.1rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: white;
+  background-color: hsl(278deg, 68%, 11%);
+}
+.submitButton:active {
+  background-color: rgb(105, 6, 175);
+}/*# sourceMappingURL=button.css.map */

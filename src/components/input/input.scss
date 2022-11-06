@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+// VARIABLES
+$cinzaLeve: hsl(270, 3%, 87%);
+$violetaForte: hsl(279, 6%, 55%);
+$violetaMaisforte:hsl(278, 68%, 11%);
+$vermelhoDeErro: rgb(247, 113, 113);
+//
+input{
+    border-style: none;
+    border: 1px solid $violetaForte;
+    &:focus{border: 1px solid $violetaMaisforte;outline: none;}
+    &.inputName, &.inputCardNumber{
+        width: 100%;
+        padding: 5px 10px 5px 10px;
+        font-size: 1rem;
+        border-radius: 5px;
+    }
+    &.inputXXYY{
+        width: 50px;
+        padding: 5px;
+        font-size: 1rem;
+        border-radius: 5px;
+        text-align: center;
+    }
+    &.inputCVC{
+        width: 100%;
+        padding: 5px 10px;
+        font-size: 1rem;
+        border-radius: 5px;
+    }
+}

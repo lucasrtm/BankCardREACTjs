@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+// VARIABLES
+$cinzaLeve: hsl(270, 3%, 87%);
+$violetaForte: hsl(279, 6%, 55%);
+$violetaMaisforte:hsl(278, 68%, 11%);
+$vermelhoDeErro: rgb(255, 45, 45);
+// 
+.rightSide{
+    display: flex;
+    width: 50vw;
+    height: 100vh;
+    align-items: center;
+    .allContent{
+        position: relative;
+        width: 300px;
+        form{
+            .inputBlock{
+                &.cardNumber,&.xxyycvc{margin-top: 20px;}
+                &.active{
+                    input{border-color: red;}
+                    span{opacity: 1;}
+                }
+                &.xxyycvc{
+                    label{
+                        font-size: .7rem;
+                        &:nth-child(2){margin-left: 40px;}
+                    }
+                    .ultimosInputs{
+                        display: flex;
+                        flex-direction: row;
+                        gap: 20px;
+                        .borderEffectError{
+                            &.active{
+                                input{border-color: red;}
+                            }
+                        }
+                    }
+                }
+                label{color: $violetaMaisforte;font-size: .9rem;}
+                span{
+                    opacity: 0;
+                    font-size: .65rem;
+                    color: red;
+                    user-select: none;
+                    cursor: default;
+                    &.active{opacity: 1;}
+                }
+            }
+        }
+    }
+}
+.successScreen{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: white;
+    svg{scale: .8;}
+    h1{color: $violetaMaisforte;}
+    h3{color: $violetaForte;}
+    h1,h3{text-align: center;font-weight: 100;}
+    .continueButton{
+        position: relative;
+        width: 100%;
+        padding: 7px 60px;
+        font-size: 1.1rem;
+        border: 1px solid black;
+        border-radius: 5px;
+        color: white;
+        background-color: $violetaMaisforte;
+        &:active{background-color: rgb(105, 6, 175);}
+    }
+}
+.errorBallon{
+    display: none;
+    position: absolute;
+    left: 320px;
+    width: 140px;
+    height: 30px;
+    opacity: 0;
+    font-size: .8rem;
+    border-radius: 5px;
+    background-color: $vermelhoDeErro;
+    animation: showBallon 3s linear;
+    &::before{
+        content: '';
+        position: absolute;
+        left: -12.5px;
+        box-sizing: border-box;
+        transform: rotate(135deg) translateY(-36%);
+        border-left: 10px solid transparent;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid $vermelhoDeErro;
+        border-right: 10px solid $vermelhoDeErro;
+    }
+    &.warningName{display: block;top: 22.4px;}
+    &.warningNumber{display: block;top: 117px;}
+    &.warningXXYYCVC{display: block;top: 213px;}
+    p{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding-left: 5px;
+        color: white;
+        text-shadow: 1px 1px rgb(245, 153, 153);
+        img{width: 20px;}
+    }
+}
+// ANIMATIONS
+@keyframes showBallon {
+    20%{opacity: 100%;}
+    80%{opacity: 100%;}
+    100%{opacity: 0;}
+}
